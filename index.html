@@ -137,9 +137,15 @@
   .pricing-card:hover { border-color: var(--yellow); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,.07); }
   .pricing-card.featured { border-color: var(--yellow); }
   .pricing-card.featured::after {
-    content: 'MOST POPULAR'; position: absolute; top: 18px; right: -32px;
+    content: 'MOST POPULAR'; position: absolute; top: 18px; right: -30px;
     background: var(--yellow); color: var(--dark); font-size: 10px; font-weight: 700;
-    padding: 4px 40px; transform: rotate(45deg); letter-spacing: 1px;
+    padding: 4px 44px; transform: rotate(45deg); letter-spacing: 1px;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .pricing-card.featured::after {
+      top: 12px; right: -28px; font-size: 9px; padding: 3px 36px;
+    }
   }
   .pricing-card-tag {
     display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
@@ -359,8 +365,8 @@
 
 <!-- GRAND OPENING BANNER -->
 <div class="grand-opening">
-  <span class="promo-long">🎉 Grand Opening Special — 25% off your first month or try us FREE for 3 days. <a href="#form">Claim Offer →</a></span>
-  <span class="promo-short">🎉 Grand Opening — 25% off or 3 days FREE. <a href="#form">Claim →</a></span>
+  <span class="promo-long">🎉 Grand Opening Special: 25% off your first month or try us FREE for 3 days. <a href="#form">Claim Offer →</a></span>
+  <span class="promo-short">🎉 Grand Opening: 25% off or 3 days FREE. <a href="#form">Claim →</a></span>
 </div>
 
 <!-- NAV -->
@@ -459,17 +465,17 @@
 <section class="features">
   <div class="section-label-wrap"><span class="section-label">Why Venture X Burlington</span></div>
   <h2>Everything You Need to Do Your Best Work</h2>
-  <p class="subtitle">Off the QEW near Burloak Drive — open desks, private offices, and team suites for freelancers, startups, and growing teams. Free parking, on-site café, and Lake Ontario views.</p>
+  <p class="subtitle">Off the QEW near Burloak Drive. Open desks, private offices, and team suites for freelancers, startups, and growing teams. Free parking, on-site café, and Lake Ontario views.</p>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">🏢</div>
       <h3>Every Workspace Type, One Location</h3>
-      <p>Hot desks, dedicated desks, private offices, and team suites — fully furnished, cleaned, and ready for 1 to 20 people.</p>
+      <p>Hot desks, dedicated desks, private offices, and team suites. All fully furnished, cleaned, and ready for 1 to 20 people.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🏋️</div>
       <h3>Premium Amenities</h3>
-      <p>Free gym access, unlimited coffee & tea, free parking, and concierge service — all included.</p>
+      <p>Free gym access, unlimited coffee & tea, free parking, and concierge service. All included with your membership.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🤝</div>
@@ -479,77 +485,22 @@
     <div class="feature-card">
       <div class="feature-icon">📅</div>
       <h3>Flexible Terms</h3>
-      <p>Month-to-month memberships — no long-term lease, no hidden fees. Scale up or down anytime.</p>
+      <p>Month-to-month memberships with no long-term lease and no hidden fees. Scale up or down anytime.</p>
     </div>
   </div>
 </section>
 
-<!-- MEMBERSHIPS -->
-<section class="pricing">
-  <div class="pricing-inner">
-    <div class="pricing-header">
-      <h2>A Workspace Built for Every Stage of Your Business</h2>
-      <p>Whether you're a solo entrepreneur or scaling a team of 20, Venture X Burlington has a flexible membership that fits the way you work — month-to-month, no long-term commitment.</p>
-    </div>
-    <div class="pricing-cards">
-
-      <div class="pricing-card">
-        <span class="pricing-card-tag">Best for 1 Person</span>
-        <h3>Open Desk</h3>
-        <p class="card-desc">Flexible shared workspace — perfect for freelancers and remote workers who want a productive, community-driven environment.</p>
-        <ul>
-          <li>Flexible shared seating</li>
-          <li>24/7 keycard access</li>
-          <li>Month-to-month terms</li>
-        </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
-      </div>
-
-      <div class="pricing-card featured">
-        <span class="pricing-card-tag">Best for 1 Person</span>
-        <h3>Dedicated Desk</h3>
-        <p class="card-desc">Your own reserved desk — always set up, always yours. The consistency of an office without the cost of one.</p>
-        <ul>
-          <li>Reserved desk — always yours</li>
-          <li>24/7 keycard access</li>
-          <li>Concierge & cleaning included</li>
-        </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
-      </div>
-
-      <div class="pricing-card">
-        <span class="pricing-card-tag">Best for 1–5 People</span>
-        <h3>Private Office</h3>
-        <p class="card-desc">A lockable, fully furnished private office — quiet, secure, and ready for your team from day one.</p>
-        <ul>
-          <li>Lockable enclosed office</li>
-          <li>Fully furnished & cleaned</li>
-          <li>Access to all boardrooms</li>
-        </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
-      </div>
-
-      <div class="pricing-card">
-        <span class="pricing-card-tag">Best for 5–20 People</span>
-        <h3>Team Suite</h3>
-        <p class="card-desc">A large private suite with a customizable layout — built for growing teams who need space to collaborate and culture to thrive.</p>
-        <ul>
-          <li>Custom layout for your team</li>
-          <li>Fully furnished & cleaned</li>
-          <li>Priority boardroom booking</li>
-        </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
-      </div>
-
-    </div>
-  </div>
-</section>
+<!-- MID CTA -->
+<div style="background:var(--yellow);padding:40px 40px;text-align:center;">
+  <p style="font-size:20px;font-weight:800;color:var(--dark);margin-bottom:6px;">Ready to see it in person?</p>
+  <p style="font-size:15px;color:#333;margin-bottom:20px;">Come by for a tour and a coffee. No pressure, no commitment.</p>
+  <a href="#form" style="display:inline-block;background:var(--dark);color:var(--white);padding:14px 36px;font-weight:700;font-size:15px;border-radius:4px;text-decoration:none;">Book A Tour →</a>
+</div>
 
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="reviews-header">
     <div class="google-badge">
-      <!-- Google G logo SVG -->
       <svg class="google-g" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -612,6 +563,67 @@
       <p class="review-text">"This co-working space is amazing! Clean, bright, modern, and so thoughtfully designed. We have a small office and have been finding ourselves much more productive than working from home. The owners are fantastic and always around. I'm not sure you'll find another space of this caliber in the Burlington / Oakville area."</p>
     </div>
 
+  </div>
+</section>
+
+<!-- MEMBERSHIPS -->
+<section class="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-header">
+      <h2>A Workspace Built for Every Stage of Your Business</h2>
+      <p>Whether you're a solo entrepreneur or scaling a team of 20, Venture X Burlington has a membership that fits the way you work. Month-to-month, no long-term commitment.</p>
+    </div>
+    <div class="pricing-cards">
+
+      <div class="pricing-card">
+        <span class="pricing-card-tag">Best for 1 Person</span>
+        <h3>Open Desk</h3>
+        <p class="card-desc">Flexible shared workspace perfect for freelancers and remote workers who want a productive, community-driven environment.</p>
+        <ul>
+          <li>Flexible shared seating</li>
+          <li>24/7 keycard access</li>
+          <li>Month-to-month terms</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+      <div class="pricing-card featured">
+        <span class="pricing-card-tag">Best for 1 Person</span>
+        <h3>Dedicated Desk</h3>
+        <p class="card-desc">Your own reserved desk, always set up and always yours. The consistency of an office without the cost of one.</p>
+        <ul>
+          <li>Reserved desk, always yours</li>
+          <li>24/7 keycard access</li>
+          <li>Concierge & cleaning included</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+      <div class="pricing-card">
+        <span class="pricing-card-tag">Best for 1–5 People</span>
+        <h3>Private Office</h3>
+        <p class="card-desc">A lockable, fully furnished private office — quiet, secure, and ready for your team from day one.</p>
+        <ul>
+          <li>Lockable enclosed office</li>
+          <li>Fully furnished & cleaned</li>
+          <li>Access to all boardrooms</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+      <div class="pricing-card">
+        <span class="pricing-card-tag">Best for 5–20 People</span>
+        <h3>Team Suite</h3>
+        <p class="card-desc">A large private suite with a customizable layout — built for growing teams who need space to collaborate and culture to thrive.</p>
+        <ul>
+          <li>Custom layout for your team</li>
+          <li>Fully furnished & cleaned</li>
+          <li>Priority boardroom booking</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+    </div>
   </div>
 </section>
 
