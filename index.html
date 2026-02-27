@@ -43,6 +43,7 @@
   }
   .nav-cta:hover { background: #e6bc00; }
   .nav-phone { color: var(--dark); text-decoration: none; font-weight: 600; font-size: 14px; margin-right: 16px; }
+  .phone-label { display: none; }
   .nav-right { display: flex; align-items: center; }
 
   /* HERO */
@@ -101,35 +102,82 @@
   .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
   .feature-card p { font-size: 14px; color: var(--mid-gray); line-height: 1.6; }
 
-  /* PRICING */
+  /* MEMBERSHIPS */
   .pricing { background: var(--gray); padding: 70px 40px; }
-  .pricing-inner { max-width: 900px; margin: 0 auto; }
-  .pricing h2 { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 50px; }
-  .pricing-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-  .pricing-card {
-    background: var(--white); border-radius: 12px; padding: 36px;
-    border: 2px solid #eee; transition: all .25s; position: relative; overflow: hidden;
+  .pricing-inner { max-width: 960px; margin: 0 auto; }
+  .pricing-header { text-align: center; margin-bottom: 48px; }
+  .pricing-header h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+  .pricing-header p { font-size: 15px; color: var(--mid-gray); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
+  .pricing-card {
+    background: var(--white); border-radius: 12px; padding: 32px;
+    border: 2px solid #eee; transition: all .25s; position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .pricing-card:hover { border-color: var(--yellow); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,.07); }
   .pricing-card.featured { border-color: var(--yellow); }
   .pricing-card.featured::after {
     content: 'MOST POPULAR'; position: absolute; top: 18px; right: -32px;
     background: var(--yellow); color: var(--dark); font-size: 10px; font-weight: 700;
     padding: 4px 40px; transform: rotate(45deg); letter-spacing: 1px;
   }
-  .pricing-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-  .pricing-card .price { font-size: 36px; font-weight: 800; margin: 14px 0 4px; }
-  .pricing-card .price span { font-size: 15px; font-weight: 500; color: var(--mid-gray); }
-  .pricing-card .price-note { font-size: 13px; color: var(--mid-gray); margin-bottom: 20px; }
-  .pricing-card ul { list-style: none; margin-bottom: 28px; }
+  .pricing-card-tag {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px;
+  }
+  .pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  .pricing-card .card-desc { font-size: 14px; color: var(--mid-gray); margin-bottom: 20px; line-height: 1.6; }
+  .pricing-card ul { list-style: none; margin-bottom: 28px; flex: 1; }
   .pricing-card li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
-  .pricing-card li::before { content: '✓'; color: var(--yellow); font-weight: 700; font-size: 16px; }
+  .pricing-card li::before { content: '✓'; color: var(--yellow); font-weight: 700; font-size: 16px; flex-shrink: 0; }
   .pricing-btn {
     display: block; width: 100%; text-align: center; padding: 14px;
     background: var(--yellow); color: var(--dark); font-weight: 700;
     font-size: 14px; border: none; border-radius: 4px; cursor: pointer;
-    font-family: inherit; transition: background .2s;
+    font-family: inherit; transition: background .2s; text-decoration: none;
   }
   .pricing-btn:hover { background: #e6bc00; }
+
+  /* REVIEWS */
+  .reviews { background: var(--gray); padding: 70px 40px; }
+  .reviews-header {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; margin-bottom: 48px; flex-wrap: wrap;
+  }
+  .google-badge {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--white); border-radius: 12px;
+    padding: 14px 22px; box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  }
+  .google-g {
+    width: 36px; height: 36px; flex-shrink: 0;
+  }
+  .google-badge-text { line-height: 1.3; }
+  .google-badge-text strong { display: block; font-size: 15px; font-weight: 800; }
+  .google-badge-text span { font-size: 13px; color: var(--mid-gray); }
+  .badge-stars { color: #FBBC04; font-size: 17px; letter-spacing: 1px; display: block; margin-top: 2px; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .review-card {
+    background: var(--white); border-radius: 12px; padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06); display: flex; flex-direction: column; gap: 12px;
+  }
+  .review-top { display: flex; align-items: center; gap: 12px; }
+  .review-avatar {
+    width: 42px; height: 42px; border-radius: 50%; background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px; color: var(--dark); flex-shrink: 0;
+  }
+  .review-name { font-weight: 700; font-size: 14px; }
+  .review-source { font-size: 12px; color: var(--mid-gray); display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+  .review-stars { color: #FBBC04; font-size: 16px; letter-spacing: 1px; }
+  .review-text { font-size: 14px; color: #444; line-height: 1.7; flex: 1; }
 
   /* FORM SECTION */
   .form-section { padding: 70px 40px; max-width: 700px; margin: 0 auto; }
@@ -220,12 +268,41 @@
   @media (max-width: 768px) {
     .gallery { padding: 50px 20px; }
     .gallery-track img { flex: 0 0 80%; height: 220px; }
-    nav { padding: 12px 20px; }
+    nav { padding: 10px 16px; }
+    .logo img { width: 100px !important; }
+    .phone-num { display: none; }
+    .phone-label { display: inline; }
+    .nav-phone {
+      font-size: 13px; font-weight: 700; margin-right: 0;
+      background: var(--yellow); color: var(--dark);
+      padding: 10px 14px; border-radius: 4px;
+    }
+    .nav-cta { display: none; }
     .hero { padding: 50px 20px 60px; }
     .hero h1 { font-size: 28px; }
-    .features, .pricing, .form-section { padding: 50px 20px; }
+    .features, .form-section, .reviews { padding: 50px 20px; }
+    .reviews-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
-    .pricing-cards { grid-template-columns: 1fr; }
+    .pricing { padding: 50px 0; }
+    .pricing-inner { padding: 0; }
+    .pricing-header { padding: 0 20px; margin-bottom: 32px; }
+    .pricing-header h2 { font-size: 22px; }
+    .pricing-header p { font-size: 14px; }
+    .pricing-cards {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 14px;
+      padding: 8px 10% 20px;
+    }
+    .pricing-cards::-webkit-scrollbar { display: none; }
+    .pricing-card {
+      flex: 0 0 80%;
+      scroll-snap-align: center;
+      transform: none !important;
+    }
     .form-grid { grid-template-columns: 1fr; }
     .form-group.half { grid-column: auto; }
     .trust-bar { gap: 24px; padding: 16px 20px; }
@@ -241,8 +318,8 @@
     <img src="Venture_X_Logo.webp" alt="Venture X" width="150">
   </a>
   <div class="nav-right">
-    <a href="tel:2893376460" class="nav-phone">📞 (289) 337-6460</a>
-    <a href="#form" class="nav-cta">Book a Tour</a>
+    <a href="tel:2893376460" class="nav-phone"><span class="phone-icon">📞</span><span class="phone-num"> (289) 337-6460</span><span class="phone-label"> Call Us</span></a>
+    <a href="#form" class="nav-cta">Book A Tour</a>
   </div>
 </nav>
 
@@ -252,7 +329,7 @@
     <div class="hero-badge">Burlington's Premium Coworking</div>
     <h1>Your Perfect <em>Office Space</em> is Waiting in Burlington</h1>
     <p>Flexible, fully furnished workspaces with Lake Ontario views, free parking, gym access, and month-to-month memberships starting at $350/mo.</p>
-    <a href="#form" class="hero-cta">Schedule a Free Tour →</a>
+    <a href="#form" class="hero-cta">Book A Tour →</a>
     <div class="hero-sub">Book today & get a complimentary day pass to try the space</div>
   </div>
 </section>
@@ -265,6 +342,53 @@
   <div class="trust-item"><span class="trust-icon">☕</span> Unlimited Coffee</div>
   <div class="trust-item"><span class="trust-icon">📅</span> Month-to-Month</div>
 </div>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <h2>Inside Venture X Burlington</h2>
+  <p class="gallery-sub">Premium spaces designed for focus, collaboration, and community.</p>
+  <div class="gallery-track-wrap">
+    <div class="gallery-track" id="galleryTrack">
+      <img src="2025-11-10.webp" alt="Venture X Burlington Entrance">
+      <img src="open area.webp" alt="Open Coworking Area">
+      <img src="Burlington-Large-Boardroom.webp" alt="Large Boardroom">
+      <img src="Burlington-12-Person-Private-Office-2 (1).jpg" alt="Private Office with Views">
+      <img src="Burlington-Meeting-Lounge.jpg" alt="Meeting Lounge">
+      <img src="2025-12-10.webp" alt="Lounge Room">
+      <img src="2025-11-24.webp" alt="Coffee Station">
+    </div>
+  </div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</section>
+
+<script>
+(function() {
+  var track = document.getElementById('galleryTrack');
+  var dotsEl = document.getElementById('galleryDots');
+  var imgs = track.querySelectorAll('img');
+  var perView = window.innerWidth <= 768 ? 1 : 3;
+
+  imgs.forEach(function(_, i) {
+    if (i % perView !== 0) return;
+    var btn = document.createElement('button');
+    if (i === 0) btn.classList.add('active');
+    btn.addEventListener('click', function() {
+      track.scrollTo({ left: imgs[i].offsetLeft, behavior: 'smooth' });
+    });
+    dotsEl.appendChild(btn);
+  });
+
+  track.addEventListener('scroll', function() {
+    var dots = dotsEl.querySelectorAll('button');
+    var idx = Math.round(track.scrollLeft / track.clientWidth);
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+  });
+
+  window.addEventListener('resize', function() {
+    perView = window.innerWidth <= 768 ? 1 : 3;
+  });
+})();
+</script>
 
 <!-- FEATURES -->
 <section class="features">
@@ -305,59 +429,19 @@
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery">
-  <h2>Inside Venture X Burlington</h2>
-  <p class="gallery-sub">Premium spaces designed for focus, collaboration, and community.</p>
-  <div class="gallery-track-wrap">
-    <div class="gallery-track" id="galleryTrack">
-      <img src="Burlington-Large-Boardroom.webp" alt="Large Boardroom">
-      <img src="Burlington-Meeting-Lounge.jpg" alt="Meeting Lounge">
-      <img src="chill room.jpeg" alt="Chill Room">
-      <img src="cafe venture x burlingon.jpeg" alt="Cafe">
-    </div>
-  </div>
-  <div class="gallery-dots" id="galleryDots"></div>
-</section>
-
-<script>
-(function() {
-  var track = document.getElementById('galleryTrack');
-  var dotsEl = document.getElementById('galleryDots');
-  var imgs = track.querySelectorAll('img');
-  var perView = window.innerWidth <= 768 ? 1 : 3;
-
-  imgs.forEach(function(_, i) {
-    if (i % perView !== 0) return;
-    var btn = document.createElement('button');
-    if (i === 0) btn.classList.add('active');
-    btn.addEventListener('click', function() {
-      track.scrollTo({ left: imgs[i].offsetLeft, behavior: 'smooth' });
-    });
-    dotsEl.appendChild(btn);
-  });
-
-  track.addEventListener('scroll', function() {
-    var dots = dotsEl.querySelectorAll('button');
-    var idx = Math.round(track.scrollLeft / track.clientWidth);
-    dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
-  });
-
-  window.addEventListener('resize', function() {
-    perView = window.innerWidth <= 768 ? 1 : 3;
-  });
-})();
-</script>
-
-<!-- PRICING -->
+<!-- MEMBERSHIPS -->
 <section class="pricing">
   <div class="pricing-inner">
-    <h2>Workspace Membership Pricing</h2>
+    <div class="pricing-header">
+      <h2>A Workspace Built for Every Stage of Your Business</h2>
+      <p>Whether you're a solo entrepreneur or scaling a team of 20, Venture X Burlington has a flexible membership that fits the way you work — month-to-month, no long-term commitment.</p>
+    </div>
     <div class="pricing-cards">
+
       <div class="pricing-card">
+        <span class="pricing-card-tag">Best for 1 Person</span>
         <h3>Open Desk</h3>
-        <div class="price">$350<span>/month</span></div>
-        <div class="price-note">Flexible shared workspace</div>
+        <p class="card-desc">Flexible shared workspace with everything you need to stay productive. Perfect for freelancers and remote workers.</p>
         <ul>
           <li>Shared workspace with flexible seating</li>
           <li>24/7 keycard access</li>
@@ -366,12 +450,13 @@
           <li>Gym access included</li>
           <li>Month-to-month terms</li>
         </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book a Tour</button>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
       </div>
+
       <div class="pricing-card featured">
+        <span class="pricing-card-tag">Best for 1 Person</span>
         <h3>Dedicated Desk</h3>
-        <div class="price">$450<span>/month</span></div>
-        <div class="price-note">Your own reserved workspace</div>
+        <p class="card-desc">Your own reserved desk in a professional environment — always set up and ready for you.</p>
         <ul>
           <li>Dedicated desk — always yours</li>
           <li>24/7 keycard access</li>
@@ -380,15 +465,116 @@
           <li>Gym access included</li>
           <li>Concierge & cleaning service</li>
         </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book a Tour</button>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+      <div class="pricing-card">
+        <span class="pricing-card-tag">Best for 1–5 People</span>
+        <h3>Private Office</h3>
+        <p class="card-desc">A lockable, fully furnished private office for you and your small team — secure, quiet, and ready to go.</p>
+        <ul>
+          <li>Lockable, enclosed office space</li>
+          <li>24/7 keycard access</li>
+          <li>Fully furnished & cleaned</li>
+          <li>Free parking on-site</li>
+          <li>Gym access included</li>
+          <li>Access to all boardrooms</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+      <div class="pricing-card">
+        <span class="pricing-card-tag">Best for 5–20 People</span>
+        <h3>Team Suite</h3>
+        <p class="card-desc">A large private suite for your growing team — customizable layout, built-in collaboration space, and a home for your culture.</p>
+        <ul>
+          <li>Dedicated team suite with custom layout</li>
+          <li>24/7 keycard access for the whole team</li>
+          <li>Fully furnished & cleaned</li>
+          <li>Free parking on-site</li>
+          <li>Gym access included</li>
+          <li>Priority boardroom booking</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="reviews-header">
+    <div class="google-badge">
+      <!-- Google G logo SVG -->
+      <svg class="google-g" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        <path fill="none" d="M0 0h48v48H0z"/>
+      </svg>
+      <div class="google-badge-text">
+        <strong>5.0 Rating</strong>
+        <span class="badge-stars">★★★★★</span>
+        <span>Google Reviews</span>
       </div>
     </div>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar" style="padding:0;overflow:hidden;"><img src="brendan.png" alt="Brendan Kenalty" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+        <div>
+          <div class="review-name">Brendan Kenalty</div>
+          <div class="review-source">
+            <svg width="14" height="14" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            Google Review
+          </div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Awesome new coworking space close to home. Modern style, with friendly staff & free drinks! We went for a free trial and signed up 👍"</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">M</div>
+        <div>
+          <div class="review-name">Makayla Curwin</div>
+          <div class="review-source">
+            <svg width="14" height="14" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            Google Review
+          </div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"This is my favourite co-working space I've ever been to! Super clean, modern, and has everything you need from private offices, co-working desks, meeting rooms, phone rooms, kitchen, etc! Coffee, snacks, and a great restaurant downstairs for lunch as well. The owners are super friendly and on top of everything. Highly recommend 10/10!"</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">S</div>
+        <div>
+          <div class="review-name">Sarah Corley</div>
+          <div class="review-source">
+            <svg width="14" height="14" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            Google Review
+          </div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"This co-working space is amazing! The space is clean, bright, modern, and so thoughtfully designed. My co-worker and I have a small office rented out and have been really enjoying the atmosphere while finding ourselves much more productive than when we worked full-time from home. The owners are fantastic and always around to make sure you have everything you need. I'm not sure you'll find another co-working space of this caliber in the Burlington / Oakville area."</p>
+    </div>
+
   </div>
 </section>
 
 <!-- FORM -->
 <section class="form-section" id="form">
-  <h2>Book a Tour at Venture X Burlington</h2>
+  <h2>Book A Tour at Venture X Burlington</h2>
   <p class="subtitle">Schedule a tour and receive a complimentary day pass to explore and work in the space.</p>
   <div id="formContainer">
     <div class="form-grid">
@@ -422,7 +608,7 @@
         <label>Notes</label>
         <textarea id="fnotes" placeholder="Tell us about your needs..."></textarea>
       </div>
-      <button class="form-submit" onclick="handleSubmit()">Schedule a Tour →</button>
+      <button class="form-submit" onclick="handleSubmit()">Book A Tour →</button>
       <div class="form-note">Our team will follow up shortly to schedule your visit.</div>
     </div>
   </div>
