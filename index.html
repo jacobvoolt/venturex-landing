@@ -143,10 +143,9 @@
     overflow: hidden;
   }
   @media (max-width: 768px) {
-    .pricing-card.featured::after {
-      top: 12px; right: -28px; font-size: 9px; padding: 3px 36px;
-    }
+    .pricing-card.featured::after { display: none; }
   }
+  .most-popular-badge { display: none; }
   .pricing-card-tag {
     display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
     text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px;
@@ -353,6 +352,20 @@
       flex: 0 0 80%;
       scroll-snap-align: center;
       transform: none !important;
+      overflow: visible;
+    }
+    .most-popular-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      align-self: flex-start;
     }
     .form-grid { grid-template-columns: 1fr; }
     .form-group.half { grid-column: auto; }
@@ -587,6 +600,19 @@
       </div>
 
       <div class="pricing-card featured">
+        <div class="most-popular-badge">Most Popular</div>
+        <span class="pricing-card-tag">Best for 1–5 People</span>
+        <h3>Private Office</h3>
+        <p class="card-desc">A lockable, fully furnished private office. Quiet, secure, and ready for your team from day one.</p>
+        <ul>
+          <li>Lockable enclosed office</li>
+          <li>Fully furnished & cleaned</li>
+          <li>Access to all boardrooms</li>
+        </ul>
+        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
+      </div>
+
+      <div class="pricing-card">
         <span class="pricing-card-tag">Best for 1 Person</span>
         <h3>Dedicated Desk</h3>
         <p class="card-desc">Your own reserved desk, always set up and always yours. The consistency of an office without the cost of one.</p>
@@ -599,21 +625,9 @@
       </div>
 
       <div class="pricing-card">
-        <span class="pricing-card-tag">Best for 1–5 People</span>
-        <h3>Private Office</h3>
-        <p class="card-desc">A lockable, fully furnished private office — quiet, secure, and ready for your team from day one.</p>
-        <ul>
-          <li>Lockable enclosed office</li>
-          <li>Fully furnished & cleaned</li>
-          <li>Access to all boardrooms</li>
-        </ul>
-        <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
-      </div>
-
-      <div class="pricing-card">
         <span class="pricing-card-tag">Best for 5–20 People</span>
         <h3>Team Suite</h3>
-        <p class="card-desc">A large private suite with a customizable layout — built for growing teams who need space to collaborate and culture to thrive.</p>
+        <p class="card-desc">A large private suite with a customizable layout, built for growing teams who need space to collaborate and culture to thrive.</p>
         <ul>
           <li>Custom layout for your team</li>
           <li>Fully furnished & cleaned</li>
@@ -629,7 +643,7 @@
 <!-- FORM -->
 <section class="form-section" id="form">
   <h2>Book A Tour at Venture X Burlington</h2>
-  <p class="subtitle">We offer day passes, weekly, and monthly memberships — something for every schedule. Book a tour and claim your Grand Opening offer: 25% off your first month or 3 days FREE.</p>
+  <p class="subtitle">We offer day passes, weekly, and monthly memberships, something for every schedule. Book a tour and claim your Grand Opening offer: 25% off your first month or 3 days FREE.</p>
   <div id="formContainer">
     <div class="form-grid">
       <div class="form-group full">
