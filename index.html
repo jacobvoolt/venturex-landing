@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" type="image/webp" href="Venture_X_Logo.webp">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>Venture X Burlington | Premium Coworking & Office Space</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
@@ -108,7 +108,7 @@
   .section-label-wrap { text-align: center; margin-bottom: 10px; }
   .features h2 { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 14px; }
   .features .subtitle { text-align: center; font-size: 16px; color: var(--mid-gray); margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 860px; margin: 0 auto; }
   .feature-card {
     padding: 30px; border-radius: 10px; background: var(--gray);
     transition: all .25s; border: 2px solid transparent;
@@ -257,8 +257,19 @@
   .gallery-sub { text-align: center; color: var(--mid-gray); font-size: 15px; margin-bottom: 36px; }
   .gallery-track-wrap {
     position: relative;
-    overflow: hidden;
   }
+  .gallery-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: var(--white); border: none; border-radius: 50%;
+    width: 44px; height: 44px; font-size: 20px; cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,.15); z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .gallery-arrow:hover { background: var(--yellow); }
+  .gallery-arrow.prev { left: 10px; }
+  .gallery-arrow.next { right: 10px; }
+  @media (max-width: 768px) { .gallery-arrow { display: none; } }
   .gallery-track {
     display: flex;
     gap: 16px;
@@ -355,7 +366,7 @@
 <!-- NAV -->
 <nav>
   <a class="logo" href="#">
-    <img src="Venture_X_Logo.webp" alt="Venture X" width="150">
+    <img src="Venture_X_Logo.webp" alt="Venture X" width="112">
   </a>
   <div class="nav-right">
     <a href="tel:2893376460" class="nav-phone"><span class="phone-icon">📞</span><span class="phone-num"> (289) 337-6460</span><span class="phone-label"> Call Us</span></a>
@@ -388,6 +399,7 @@
   <h2>Modern Workspaces Inside Venture X Burlington</h2>
   <p class="gallery-sub">Premium spaces designed for focus, collaboration, and community.</p>
   <div class="gallery-track-wrap">
+    <button class="gallery-arrow prev" id="galleryPrev">&#8592;</button>
     <div class="gallery-track" id="galleryTrack">
       <img src="2025-11-10.webp" alt="Venture X Burlington Entrance">
       <img src="nice.webp" alt="Lounge with City Views">
@@ -398,6 +410,7 @@
       <img src="2025-12-10.webp" alt="Lounge Room">
       <img src="2025-11-24.webp" alt="Coffee Station">
     </div>
+    <button class="gallery-arrow next" id="galleryNext">&#8594;</button>
   </div>
   <div class="gallery-dots" id="galleryDots"></div>
 </section>
@@ -408,6 +421,17 @@
   var dotsEl = document.getElementById('galleryDots');
   var imgs = track.querySelectorAll('img');
   var perView = window.innerWidth <= 768 ? 1 : 3;
+
+  function getScrollAmount() {
+    return imgs[0].offsetWidth + 16;
+  }
+
+  document.getElementById('galleryPrev').addEventListener('click', function() {
+    track.scrollBy({ left: -getScrollAmount() * 2, behavior: 'smooth' });
+  });
+  document.getElementById('galleryNext').addEventListener('click', function() {
+    track.scrollBy({ left: getScrollAmount() * 2, behavior: 'smooth' });
+  });
 
   imgs.forEach(function(_, i) {
     if (i % perView !== 0) return;

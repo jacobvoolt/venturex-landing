@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- White circle background -->
+  <circle cx="50" cy="50" r="50" fill="#ffffff"/>
+  <!-- Four yellow diamonds arranged in 2x2 grid like Venture X logo -->
+  <!-- Top-left diamond -->
+  <polygon points="30,18 42,30 30,42 18,30" fill="#FFD100"/>
+  <!-- Top-right diamond -->
+  <polygon points="70,18 82,30 70,42 58,30" fill="#FFD100"/>
+  <!-- Bottom-left diamond -->
+  <polygon points="30,58 42,70 30,82 18,70" fill="#FFD100"/>
+  <!-- Bottom-right diamond -->
+  <polygon points="70,58 82,70 70,82 58,70" fill="#FFD100"/>
+</svg>
