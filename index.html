@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="Venture_X_Logo.webp">
 <title>Venture X Burlington | Premium Coworking & Office Space</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
@@ -19,6 +20,21 @@
   }
 
   body { font-family: 'Montserrat', sans-serif; color: var(--dark); line-height: 1.6; }
+
+  /* GRAND OPENING BANNER */
+  .grand-opening {
+    background: var(--yellow);
+    color: var(--dark);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .grand-opening span { font-weight: 400; }
+  .grand-opening a { color: var(--dark); text-decoration: underline; margin-left: 10px; font-weight: 700; }
+  .grand-opening .promo-long { display: inline; }
+  .grand-opening .promo-short { display: none; }
 
   /* NAV */
   nav {
@@ -208,16 +224,31 @@
   .form-success h3 { font-size: 24px; margin-bottom: 10px; }
   .form-success p { color: var(--mid-gray); }
 
-  /* LOCATION */
-  .location { background: var(--dark); color: var(--white); padding: 50px 40px; text-align: center; }
-  .location h2 { font-size: 24px; font-weight: 700; margin-bottom: 14px; }
-  .location p { color: #aaa; font-size: 15px; margin-bottom: 6px; }
-  .location a { color: var(--yellow); text-decoration: none; font-weight: 600; }
-
   /* FOOTER */
-  footer {
-    background: #111; color: #888; text-align: center; padding: 24px 40px;
-    font-size: 13px;
+  .site-footer { background: var(--white); color: #666; border-top: 1px solid #eee; }
+  .footer-main {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px;
+    max-width: 1100px; margin: 0 auto; padding: 60px 40px 40px;
+  }
+  .footer-brand img { width: 130px; margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; line-height: 1.7; color: #666; max-width: 280px; }
+  .footer-col h4 { color: var(--dark); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; font-size: 14px; }
+  .footer-col a { color: #555; text-decoration: none; transition: color .2s; }
+  .footer-col a:hover { color: var(--yellow); }
+  .footer-map { width: 100%; border: none; height: 220px; border-radius: 10px; margin-top: 6px; filter: grayscale(20%); }
+  .footer-divider { border: none; border-top: 1px solid #eee; margin: 0; }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto; padding: 20px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: #999;
+  }
+  .footer-bottom a { color: #999; text-decoration: none; }
+  .footer-bottom a:hover { color: var(--yellow); }
+  @media (max-width: 768px) {
+    .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px 24px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
   }
 
   /* GALLERY */
@@ -268,6 +299,9 @@
   @media (max-width: 768px) {
     .gallery { padding: 50px 20px; }
     .gallery-track img { flex: 0 0 80%; height: 220px; }
+    .grand-opening .promo-long { display: none; }
+    .grand-opening .promo-short { display: inline; }
+    .grand-opening { font-size: 13px; }
     nav { padding: 10px 16px; }
     .logo img { width: 100px !important; }
     .phone-num { display: none; }
@@ -312,6 +346,12 @@
 </head>
 <body>
 
+<!-- GRAND OPENING BANNER -->
+<div class="grand-opening">
+  <span class="promo-long">🎉 Grand Opening Special — 25% off your first month or try us FREE for 3 days. <a href="#form">Claim Offer →</a></span>
+  <span class="promo-short">🎉 Grand Opening — 25% off or 3 days FREE. <a href="#form">Claim →</a></span>
+</div>
+
 <!-- NAV -->
 <nav>
   <a class="logo" href="#">
@@ -326,11 +366,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">Burlington's Premium Coworking</div>
-    <h1>Your Perfect <em>Office Space</em> is Waiting in Burlington</h1>
-    <p>Flexible, fully furnished workspaces with Lake Ontario views, free parking, gym access, and month-to-month memberships starting at $350/mo.</p>
+    <div class="hero-badge">Now Open in Burlington</div>
+    <h1>Premium Coworking & <em>Office Space</em> in Burlington</h1>
+    <p>Fully furnished workspaces with Lake Ontario views, free parking, gym access, and flexible month-to-month memberships.</p>
     <a href="#form" class="hero-cta">Book A Tour →</a>
-    <div class="hero-sub">Book today & get a complimentary day pass to try the space</div>
+    <div class="hero-sub">Come by for a tour, a coffee, and see the space for yourself</div>
   </div>
 </section>
 
@@ -345,11 +385,12 @@
 
 <!-- GALLERY -->
 <section class="gallery">
-  <h2>Inside Venture X Burlington</h2>
+  <h2>Modern Workspaces Inside Venture X Burlington</h2>
   <p class="gallery-sub">Premium spaces designed for focus, collaboration, and community.</p>
   <div class="gallery-track-wrap">
     <div class="gallery-track" id="galleryTrack">
       <img src="2025-11-10.webp" alt="Venture X Burlington Entrance">
+      <img src="nice.webp" alt="Lounge with City Views">
       <img src="open area.webp" alt="Open Coworking Area">
       <img src="Burlington-Large-Boardroom.webp" alt="Large Boardroom">
       <img src="Burlington-12-Person-Private-Office-2 (1).jpg" alt="Private Office with Views">
@@ -392,39 +433,29 @@
 
 <!-- FEATURES -->
 <section class="features">
-  <div class="section-label-wrap"><span class="section-label">Why Venture X</span></div>
-  <h2>Everything You Need to Get Down to Business</h2>
-  <p class="subtitle">Located off the QEW near Burloak Drive — quick highway access, on-site café, and stunning Lake Ontario views.</p>
+  <div class="section-label-wrap"><span class="section-label">Why Venture X Burlington</span></div>
+  <h2>Everything You Need to Do Your Best Work</h2>
+  <p class="subtitle">Off the QEW near Burloak Drive — open desks, private offices, and team suites for freelancers, startups, and growing teams. Free parking, on-site café, and Lake Ontario views.</p>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">🏢</div>
-      <h3>Customizable Offices</h3>
-      <p>Private offices with cleaning and concierge-style service, tailored to your team's needs.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛋️</div>
-      <h3>Premium Furniture</h3>
-      <p>Fully furnished spaces with ergonomic chairs, standing desks, and modern meeting rooms.</p>
+      <h3>Every Workspace Type, One Location</h3>
+      <p>Hot desks, dedicated desks, private offices, and team suites — fully furnished, cleaned, and ready for 1 to 20 people.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🏋️</div>
-      <h3>Gym & Wellness</h3>
-      <p>Free access to an on-site gym and wellness amenities to keep you at your best.</p>
+      <h3>Premium Amenities</h3>
+      <p>Free gym access, unlimited coffee & tea, free parking, and concierge service — all included.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">🎤</div>
-      <h3>Event Space</h3>
-      <p>State-of-the-art meeting rooms and event space for presentations, workshops, and networking.</p>
+      <div class="feature-icon">🤝</div>
+      <h3>Meeting & Event Rooms</h3>
+      <p>Modern boardrooms, meeting lounges, and event space available for members and guests.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">☕</div>
-      <h3>On-Site Café</h3>
-      <p>Unlimited premium coffee, tea, and an on-site restaurant to fuel your workday.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🧹</div>
-      <h3>Concierge Service</h3>
-      <p>Cleaning, mail handling, and concierge support so you can focus on what matters.</p>
+      <div class="feature-icon">📅</div>
+      <h3>Flexible Terms</h3>
+      <p>Month-to-month memberships — no long-term lease, no hidden fees. Scale up or down anytime.</p>
     </div>
   </div>
 </section>
@@ -441,13 +472,10 @@
       <div class="pricing-card">
         <span class="pricing-card-tag">Best for 1 Person</span>
         <h3>Open Desk</h3>
-        <p class="card-desc">Flexible shared workspace with everything you need to stay productive. Perfect for freelancers and remote workers.</p>
+        <p class="card-desc">Flexible shared workspace — perfect for freelancers and remote workers who want a productive, community-driven environment.</p>
         <ul>
-          <li>Shared workspace with flexible seating</li>
+          <li>Flexible shared seating</li>
           <li>24/7 keycard access</li>
-          <li>Unlimited coffee & tea</li>
-          <li>Free parking on-site</li>
-          <li>Gym access included</li>
           <li>Month-to-month terms</li>
         </ul>
         <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
@@ -456,14 +484,11 @@
       <div class="pricing-card featured">
         <span class="pricing-card-tag">Best for 1 Person</span>
         <h3>Dedicated Desk</h3>
-        <p class="card-desc">Your own reserved desk in a professional environment — always set up and ready for you.</p>
+        <p class="card-desc">Your own reserved desk — always set up, always yours. The consistency of an office without the cost of one.</p>
         <ul>
-          <li>Dedicated desk — always yours</li>
+          <li>Reserved desk — always yours</li>
           <li>24/7 keycard access</li>
-          <li>Unlimited coffee & tea</li>
-          <li>Free parking on-site</li>
-          <li>Gym access included</li>
-          <li>Concierge & cleaning service</li>
+          <li>Concierge & cleaning included</li>
         </ul>
         <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
       </div>
@@ -471,13 +496,10 @@
       <div class="pricing-card">
         <span class="pricing-card-tag">Best for 1–5 People</span>
         <h3>Private Office</h3>
-        <p class="card-desc">A lockable, fully furnished private office for you and your small team — secure, quiet, and ready to go.</p>
+        <p class="card-desc">A lockable, fully furnished private office — quiet, secure, and ready for your team from day one.</p>
         <ul>
-          <li>Lockable, enclosed office space</li>
-          <li>24/7 keycard access</li>
+          <li>Lockable enclosed office</li>
           <li>Fully furnished & cleaned</li>
-          <li>Free parking on-site</li>
-          <li>Gym access included</li>
           <li>Access to all boardrooms</li>
         </ul>
         <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
@@ -486,13 +508,10 @@
       <div class="pricing-card">
         <span class="pricing-card-tag">Best for 5–20 People</span>
         <h3>Team Suite</h3>
-        <p class="card-desc">A large private suite for your growing team — customizable layout, built-in collaboration space, and a home for your culture.</p>
+        <p class="card-desc">A large private suite with a customizable layout — built for growing teams who need space to collaborate and culture to thrive.</p>
         <ul>
-          <li>Dedicated team suite with custom layout</li>
-          <li>24/7 keycard access for the whole team</li>
+          <li>Custom layout for your team</li>
           <li>Fully furnished & cleaned</li>
-          <li>Free parking on-site</li>
-          <li>Gym access included</li>
           <li>Priority boardroom booking</li>
         </ul>
         <button class="pricing-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Book A Tour</button>
@@ -566,7 +585,7 @@
         </div>
       </div>
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"This co-working space is amazing! The space is clean, bright, modern, and so thoughtfully designed. My co-worker and I have a small office rented out and have been really enjoying the atmosphere while finding ourselves much more productive than when we worked full-time from home. The owners are fantastic and always around to make sure you have everything you need. I'm not sure you'll find another co-working space of this caliber in the Burlington / Oakville area."</p>
+      <p class="review-text">"This co-working space is amazing! Clean, bright, modern, and so thoughtfully designed. We have a small office and have been finding ourselves much more productive than working from home. The owners are fantastic and always around. I'm not sure you'll find another space of this caliber in the Burlington / Oakville area."</p>
     </div>
 
   </div>
@@ -575,7 +594,7 @@
 <!-- FORM -->
 <section class="form-section" id="form">
   <h2>Book A Tour at Venture X Burlington</h2>
-  <p class="subtitle">Schedule a tour and receive a complimentary day pass to explore and work in the space.</p>
+  <p class="subtitle">We offer day passes, weekly, and monthly memberships — something for every schedule. Book a tour and claim your Grand Opening offer: 25% off your first month or 3 days FREE.</p>
   <div id="formContainer">
     <div class="form-grid">
       <div class="form-group full">
@@ -604,10 +623,6 @@
           <option>Event Space</option>
         </select>
       </div>
-      <div class="form-group full">
-        <label>Notes</label>
-        <textarea id="fnotes" placeholder="Tell us about your needs..."></textarea>
-      </div>
       <button class="form-submit" onclick="handleSubmit()">Book A Tour →</button>
       <div class="form-note">Our team will follow up shortly to schedule your visit.</div>
     </div>
@@ -619,17 +634,46 @@
   </div>
 </section>
 
-<!-- LOCATION -->
-<section class="location">
-  <h2>📍 Visit Us in Burlington</h2>
-  <p>1122 International Boulevard, Suite 700</p>
-  <p>Burlington, Ontario, L7L 6Z8, Canada</p>
-  <p style="margin-top:12px;"><a href="tel:2893376460">(289) 337-6460</a></p>
-</section>
-
 <!-- FOOTER -->
-<footer>
-  © 2026 Venture X™. All Rights Reserved.
+<footer class="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <img src="Venture_X_Logo.webp" alt="Venture X Burlington">
+      <p>Burlington's premium coworking space — flexible memberships for freelancers, startups, and growing teams. Off the QEW with free parking, Lake Ontario views, and everything you need to do your best work.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>📍 1122 International Blvd, Suite 700<br>Burlington, ON L7L 6Z8</li>
+        <li style="margin-top:10px;"><a href="tel:2893376460">📞 (289) 337-6460</a></li>
+        <li><a href="#form">✉️ Book A Tour</a></li>
+      </ul>
+      <h4 style="margin-top:28px;">Hours</h4>
+      <ul>
+        <li>Mon – Fri: 8am – 6pm</li>
+        <li>24/7 Keycard Access for Members</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Find Us</h4>
+      <iframe
+        class="footer-map"
+        src="https://maps.google.com/maps?q=1122+International+Blvd+Suite+700+Burlington+ON+L7L+6Z8&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span>© 2026 Venture X Burlington. All Rights Reserved.</span>
+    <span><a href="https://venturex.com" target="_blank">venturex.com</a></span>
+  </div>
 </footer>
 
 <script>
